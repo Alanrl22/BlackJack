@@ -8,10 +8,12 @@ class Play {
         // Player
         System.out.println("Hello, is your turn");
         int[] cards = pull(2); 
+
         if (cards[0] == 1) {
-            cards[0] = Ace();
-        } else if (cards[1] == 1) {
-            cards[1] = Ace();
+            cards[0] = ace();
+        }
+        if (cards[1] == 1) {
+            cards[1] = ace();
         }
 
         System.out.println("Here are your cards: " + cards[0] + " " + cards[1]);
@@ -34,7 +36,7 @@ class Play {
             if (answer.equals("yes") || answer.equals("yes ")) {
                 card = pull(1);
                 if (card[0] == 1){
-                    card[0] = Ace();
+                    card[0] = ace();
                 }
                 System.out.println("Your new card :" + card[0]);
                 score[0] += card[0];
@@ -106,7 +108,7 @@ class Play {
         return cartes;
     }
 
-    public static int Ace() {
+    public static int ace() {
         Scanner scan = new Scanner(System.in);
         System.out.println("You have an Ace, you have to choose betwenn 1 or 11");
         int answer = scan.nextInt();
