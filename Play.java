@@ -97,7 +97,12 @@ class Play {
 
     public static int[] pull(int numberCards) {
         Random randomNumberGenerator = new Random();
-        int[] cartes = randomNumberGenerator.ints(numberCards, 1, 11).toArray();
+        int[] cartes = randomNumberGenerator.ints(numberCards, 1, 14).toArray();
+        for (int i = 0; i < cartes.length; i++) {
+            if (cartes[i] > 10) {
+                cartes[i] = 10;
+            }
+        }
         return cartes;
     }
 
